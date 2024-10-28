@@ -24,37 +24,29 @@ int main() {
     std::vector<cv::Mat> imagesRGB; // Le tue immagini RGB
     std::vector<cv::Mat> imagesDepth; // Le tue immagini Depth
 
-        std::vector<std::string> imagePathsRGB = {
-        "path/to/image1.jpg",
-        "path/to/image2.jpg",
-        "path/to/image3.jpg"
-    };
-
-    // Carica le immagini
-    for (const auto& path : imagePathsRGB) {
-        cv::Mat img = cv::imread(path);
-        if (img.empty()) {
-            std::cerr << "Errore nel caricamento dell'immagine RGB: " << path << std::endl;
-            continue;
+    for(int i=0; i<n; i++)
+        {
+            std::string filename="image_"+std::to_string(i)+".png";
+            cv::Mat image=cv:imread(filename);
+            if (img.empty()) {
+                std::cerr << "Errore nel caricamento dell'immagine RGB: " << path << std::endl;
+                continue;
+             }
+            imagesRGB.push_back(image);
         }
-        imagesRGB.push_back(img);
-    }
 
-        std::vector<std::string> imagePathsDepth = {
-        "path/to/image1.jpg",
-        "path/to/image2.jpg",
-        "path/to/image3.jpg"
-    };
 
-    // Carica le immagini
-    for (const auto& path : imagePathsDepth) {
-        cv::Mat img = cv::imread(path);
-        if (img.empty()) {
-            std::cerr << "Errore nel caricamento dell'immagine Depth: " << path << std::endl;
-            continue;
+
+    for(int i=0; i<n; i++)
+        {
+            std::string filename="depth_"+std::to_string(i)+".png";
+            cv::Mat image=cv:imread(filename);
+            if (img.empty()) {
+                std::cerr << "Errore nel caricamento dell'immagine Depth: " << path << std::endl;
+                continue;
+             }
+            imagesDepth.push_back(image);
         }
-        imagesDepth.push_back(img);
-    }
 
     for (size_t i = 0; i < imagesRGB.size(); i++) {
         std::vector<cv::Point2f> cornersRGB, cornersIR;
