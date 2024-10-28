@@ -24,7 +24,7 @@ int main() {
     std::vector<cv::Mat> imagesRGB; // Le tue immagini RGB
     std::vector<cv::Mat> imagesDepth; // Le tue immagini Depth
 
-    for(int i=0; i<n; i++)
+    for(int i=0; i<67; i++)
         {
             std::string filename="image_"+std::to_string(i)+".png";
             cv::Mat image=cv:imread(filename);
@@ -37,7 +37,7 @@ int main() {
 
 
 
-    for(int i=0; i<n; i++)
+    for(int i=0; i<67; i++)
         {
             std::string filename="depth_"+std::to_string(i)+".png";
             cv::Mat image=cv:imread(filename);
