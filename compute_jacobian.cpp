@@ -152,7 +152,7 @@ class Controller : public rclcpp::Node
 
 
         RCLCPP_INFO(this->get_logger(), "Publishing: [%f, %f, %f, %f, %f, %f, %f]",
-                    message.data[0], message.data[1], message.data[2], message.data[3], message.data[4], message.data[5], message.data[6]);
+                    msg.data[0], msg.data[1], msg.data[2], msg.data[3], msg.data[4], msg.data[5], msg.data[6]);
 
         // Pubblica il messaggio
         velocity_cmd_pub_->publish(msg);
